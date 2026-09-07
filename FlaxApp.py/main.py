@@ -4,7 +4,7 @@ from style import *
 # Main window
 window = tk.Tk()
 
-window.title("Flax / Harakeke Guide")
+window.title("Harakeke Guide")
 window.geometry("900x600")
 window.configure(bg=BACKGROUND)
 
@@ -12,7 +12,7 @@ window.configure(bg=BACKGROUND)
 # Title
 title = tk.Label(
     window,
-    text="Flax / Harakeke Guide",
+    text="Harakeke Guide",
     font=TITLE_FONT,
     bg=BACKGROUND,
     fg=TEXT
