@@ -29,7 +29,17 @@ content = tk.Frame(
 
 content.pack(fill="both", expand=True, padx=30, pady=10)
 
+# Information for each category
+category_information = {
+    "Harvesting Harakeke": "Harakeke should only be harvested on public propertie. you should always cut away from yourself, and not in wet weather",
+    "Preparing Harakeke": "Mattering on what youre weaving you need to prepare the Harakeke in different ways from removing the fibre or just cuting off the edge",
+    "Basics to weaving": "Patterns :P will show image later",
+    "Advanced weaving": "Step by step basket or flower"
+}
 
+def show_information(category):
+    information.config(text=category_information[category])
+    
 # Main information area
 information = tk.Label(
     content,
@@ -61,7 +71,8 @@ for category in categories:
         bg=BOX_BACKGROUND,
         fg=TEXT,
         width=20,
-        height=3
+        height=3,
+        command=lambda c=category: show_information(c)
     )
 
     box.pack(side="left", padx=5, pady=10)
