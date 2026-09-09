@@ -46,10 +46,10 @@ information.pack(pady=10)
 
 # Category areas
 categories = [
-    "Empty text to be added",
-    "Empty text to be added",
-    "Empty text to be added",
-    "Empty text to be added"
+    "Harvesting Harakeke",
+    "Preparing Harakeke",
+    "Basics to weaving",
+    "Advanced weaving"
 ]
 
 for category in categories:
