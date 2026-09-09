@@ -47,11 +47,14 @@ information = tk.Label(
     font=BODY_FONT,
     bg=BOX_BACKGROUND,
     fg=TEXT,
-    width=50,
-    height=10
+    wraplength=750,
+    justify="left",
+    padx=20,
+    pady=20
 )
 
-information.pack(pady=10)
+information.pack(fill="both", expand=True, pady=10)
+
 
 
 # Category areas
@@ -72,6 +75,7 @@ for category in categories:
         fg=TEXT,
         width=20,
         height=3,
+        wraplength=120,
         command=lambda c=category: show_information(c)
     )
 
