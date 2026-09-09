@@ -1,9 +1,13 @@
 # Background colours
-BACKGROUND = "white"
-BOX_BACKGROUND = "lightgray"
+BACKGROUND = "#F3F0DF"
+BOX_BACKGROUND = "#E4DFC5"
+
+# Button colours
+BUTTON_BACKGROUND = "#527A52"
+BUTTON_ACTIVE = "#3F633F"
 
 # Text colour
-TEXT = "black"
+TEXT = "#243524"
 
 # Fonts
 TITLE_FONT = ("Arial", 24, "bold")

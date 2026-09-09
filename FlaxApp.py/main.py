@@ -43,7 +43,7 @@ def show_information(category):
 # Main information area
 information = tk.Label(
     content,
-    text="Empty text to be added",
+    text="Welcome to the Harakeke Guide, Learn about harakeke and how it can be prepared and used for weaving. Select a category below to get started.",
     font=BODY_FONT,
     bg=BOX_BACKGROUND,
     fg=TEXT,
@@ -55,7 +55,26 @@ information = tk.Label(
 
 information.pack(fill="both", expand=True, pady=10)
 
+#Home button
+def show_home():
+    information.config(
+        text="Welcome to the Harakeke Guide\n\n"
+             "Learn about harakeke and how it can be prepared "
+             "and used for weaving.\n\n"
+             "Select a category below to get started."
+    )
+home_button = tk.Button(
+    content,
+    text="Home",
+    font=BODY_FONT,
+    bg=BUTTON_BACKGROUND,
+    fg=TEXT,
+    width=12,
+    height=2,
+    command=show_home
+)
 
+home_button.pack(pady=5)
 
 # Category areas
 categories = [
@@ -64,14 +83,15 @@ categories = [
     "Basics to weaving",
     "Advanced weaving"
 ]
-
+# Category buttons
 for category in categories:
 
     box = tk.Button(
         content,
         text=category,
         font=BODY_FONT,
-        bg=BOX_BACKGROUND,
+        bg=BUTTON_BACKGROUND,
+        activebackground=BUTTON_ACTIVE,
         fg=TEXT,
         width=20,
         height=3,
