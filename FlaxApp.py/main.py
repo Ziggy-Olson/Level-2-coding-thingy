@@ -6,6 +6,7 @@ window = tk.Tk()
 
 window.title("Harakeke Guide")
 window.geometry("900x600")
+window.minsize(900, 600)
 window.configure(bg=BACKGROUND)
 
 
