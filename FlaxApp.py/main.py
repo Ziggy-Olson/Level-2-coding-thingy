@@ -54,13 +54,13 @@ categories = [
 
 for category in categories:
 
-    box = tk.Label(
+    box = tk.Button(
         content,
         text=category,
         font=BODY_FONT,
         bg=BOX_BACKGROUND,
         fg=TEXT,
-        width=25,
+        width=20,
         height=3
     )
 
