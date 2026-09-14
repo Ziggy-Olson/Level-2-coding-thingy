@@ -56,6 +56,19 @@ information = tk.Label(
 
 information.pack(fill="both", expand=True, pady=10)
 
+# Image placeholder
+image_placeholder = tk.Label(
+    content,
+    text="[ Image will be added here ]",
+    font=BODY_FONT,
+    bg=BOX_BACKGROUND,
+    fg=TEXT,
+    width=30,
+    height=8
+)
+
+image_placeholder.pack(pady=10)
+
 #Home button
 def show_home():
     information.config(
