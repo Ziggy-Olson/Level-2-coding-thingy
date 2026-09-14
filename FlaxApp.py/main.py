@@ -40,6 +40,7 @@ category_information = {
 
 def show_information(category):
     information.config(text=category_information[category])
+    image_placeholder.config(text="[ Image for " + category + " ]")
     
 # Main information area
 information = tk.Label(
