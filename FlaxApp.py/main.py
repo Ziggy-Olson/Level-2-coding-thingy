@@ -21,7 +21,6 @@ title = tk.Label(
 
 title.pack(pady=20)
 
-
 # Main content area
 content = tk.Frame(
     window,
@@ -29,6 +28,28 @@ content = tk.Frame(
 )
 
 content.pack(fill="both", expand=True, padx=30, pady=10)
+
+# Images
+def load_image(filename):
+    image = tk.PhotoImage(file="images/" + filename)
+
+    # Make large images smaller
+    width = image.width()
+    height = image.height()
+
+    if width > 400 or height > 250:
+        image = image.subsample(
+            max(1, width // 400),
+            max(1, height // 250)
+        )
+
+    return image
+    
+home_image = tk.PhotoImage(file="images/Flax1.png")
+harvesting_image = tk.PhotoImage(file="images/Flax2.png")
+preparing_image = tk.PhotoImage(file="images/Flax3.png")
+basics_image = tk.PhotoImage(file="images/Flax4.png")
+advanced_image = tk.PhotoImage(file="images/Flax5.png")
 
 # Information for each category
 category_information = {
@@ -40,8 +61,15 @@ category_information = {
 
 def show_information(category):
     information.config(text=category_information[category])
-    image_placeholder.config(text="[ Image for " + category + " ]")
-    
+    if category == "Harvesting Harakeke":
+        image_placeholder.config(image=harvesting_image, text="")
+    elif category == "Preparing Harakeke":
+        image_placeholder.config(image=preparing_image, text="")
+    elif category == "Basics to weaving":
+        image_placeholder.config(image=basics_image, text="")
+    elif category == "Advanced weaving":
+        image_placeholder.config(image=advanced_image, text="")
+
 # Main information area
 information = tk.Label(
     content,
@@ -59,7 +87,7 @@ information.pack(fill="both", expand=True, pady=10)
 # Image placeholder
 image_placeholder = tk.Label(
     content,
-    text="[ Image will be added here ]",
+    text="[Not Loaded D:]",
     font=BODY_FONT,
     bg=BOX_BACKGROUND,
     fg=TEXT,
@@ -77,11 +105,11 @@ def show_home():
              "and used for weaving.\n\n"
              "Select a category below to get started."
     )
-    
-    image_placeholder.config(
-        text="[ Home image will be added here ]"
-    )
 
+    image_placeholder.config(
+        image=home_image,
+        text=""
+    )
 home_button = tk.Button(
     content,
     text="Home",
