@@ -21,14 +21,42 @@ title = tk.Label(
 
 title.pack(pady=20)
 
-# Main content area
-content = tk.Frame(
+# Scrollable main content area
+canvas = tk.Canvas(
     window,
+    bg=BACKGROUND,
+    highlightthickness=0
+)
+canvas.pack(side="left", fill="both", expand=True, padx=30, pady=10)
+
+scrollbar = tk.Scrollbar(
+    window,
+    orient="vertical",
+    command=canvas.yview
+)
+scrollbar.pack(side="right", fill="y")
+
+canvas.configure(yscrollcommand=scrollbar.set)
+
+content = tk.Frame(
+    canvas,
     bg=BACKGROUND
 )
 
-content.pack(fill="both", expand=True, padx=30, pady=10)
+canvas_window = canvas.create_window(
+    (0, 0),
+    window=content,
+    anchor="nw"
+)
 
+def update_scroll(event):
+    canvas.configure(scrollregion=canvas.bbox("all"))
+
+def scroll(event):
+    canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+
+canvas.bind_all("<MouseWheel>", scroll)
+content.bind("<Configure>", update_scroll)
 # Images
 def load_image(filename):
     image = tk.PhotoImage(file="images/" + filename)
