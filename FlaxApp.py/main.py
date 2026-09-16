@@ -45,7 +45,6 @@ def show_information(category):
 # Main information area
 information = tk.Label(
     content,
-    text="Welcome to the Harakeke Guide, Learn about harakeke and how it can be prepared and used for weaving. Select a category below to get started.",
     font=BODY_FONT,
     bg=BOX_BACKGROUND,
     fg=TEXT,
