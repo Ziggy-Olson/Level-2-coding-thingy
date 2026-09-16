@@ -89,6 +89,10 @@ category_information = {
 
 def show_information(category):
     information.config(text=category_information[category])
+    
+    # Scroll back to the top
+    canvas.yview_moveto(0)
+
     if category == "Harvesting Harakeke":
         image_placeholder.config(image=harvesting_image, text="")
     elif category == "Preparing Harakeke":
@@ -123,6 +127,7 @@ image_placeholder.pack(pady=10)
 
 #Home button
 def show_home():
+    canvas.yview_moveto(0)
     information.config(
         text="Welcome to the Harakeke Guide\n\n"
              "Learn about harakeke and how it can be prepared "
