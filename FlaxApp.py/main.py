@@ -84,15 +84,11 @@ information = tk.Label(
 
 information.pack(fill="both", expand=True, pady=10)
 
-# Image placeholder
+# Image area
 image_placeholder = tk.Label(
     content,
-    text="[Not Loaded D:]",
-    font=BODY_FONT,
-    bg=BOX_BACKGROUND,
-    fg=TEXT,
-    width=30,
-    height=8
+    image=home_image,
+    bg=BOX_BACKGROUND
 )
 
 image_placeholder.pack(pady=10)
