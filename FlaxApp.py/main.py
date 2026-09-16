@@ -78,6 +78,11 @@ def show_home():
              "and used for weaving.\n\n"
              "Select a category below to get started."
     )
+    
+    image_placeholder.config(
+        text="[ Home image will be added here ]"
+    )
+
 home_button = tk.Button(
     content,
     text="Home",
@@ -90,6 +95,9 @@ home_button = tk.Button(
 )
 
 home_button.pack(pady=5)
+
+# Show Home screen when app starts
+show_home()
 
 # Category areas
 categories = [
