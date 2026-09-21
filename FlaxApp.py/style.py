@@ -8,6 +8,7 @@ BUTTON_ACTIVE = "#3F633F"
 
 # Text colour
 TEXT = "#243524"
+BUTTON_TEXT = "#F3F0DF"
 
 # Fonts
 TITLE_FONT = ("Arial", 24, "bold")

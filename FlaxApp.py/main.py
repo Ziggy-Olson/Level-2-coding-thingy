@@ -76,7 +76,7 @@ def load_image(filename):
 home_image = tk.PhotoImage(file="images/Flax1.png")
 harvesting_image = tk.PhotoImage(file="images/Flax2.png")
 preparing_image = tk.PhotoImage(file="images/Flax3.png")
-basics_image = tk.PhotoImage(file="images/Flax4.png")
+basics_image = tk.PhotoImage(file="images/How to fish.png")
 advanced_image = tk.PhotoImage(file="images/Flax5.png")
 
 # Information for each category
@@ -144,7 +144,7 @@ home_button = tk.Button(
     text="Home",
     font=BODY_FONT,
     bg=BUTTON_BACKGROUND,
-    fg=TEXT,
+    fg=BUTTON_TEXT,
     width=12,
     height=2,
     command=show_home
@@ -171,7 +171,7 @@ for category in categories:
         font=BODY_FONT,
         bg=BUTTON_BACKGROUND,
         activebackground=BUTTON_ACTIVE,
-        fg=TEXT,
+        fg=BUTTON_TEXT,
         width=20,
         height=3,
         wraplength=120,
