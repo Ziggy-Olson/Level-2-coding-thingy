@@ -85,6 +85,8 @@ harvesting_image = tk.PhotoImage(file="images/Flax2.png")
 preparing_image = tk.PhotoImage(file="images/Flax3.png")
 basics_image = tk.PhotoImage(file="images/How to fish.png")
 advanced_image = tk.PhotoImage(file="images/Flax5.png")
+home_icon_original = tk.PhotoImage(file="images/home.png")
+home_icon = home_icon_original.subsample(30, 30)
 
 # Information for each category
 category_information = {
@@ -149,14 +151,18 @@ def show_home():
 home_button = tk.Button(
     content,
     text="Home",
+    image=home_icon,
+    compound="left",
     font=BODY_FONT,
     bg=BUTTON_BACKGROUND,
+    activebackground=BUTTON_ACTIVE,
     fg=BUTTON_TEXT,
-    width=12,
-    height=2,
+    width=120,
+    height=45,
+    anchor="center",
+    justify="center",
     command=show_home
 )
-
 home_button.pack(pady=5)
 
 # Show Home screen when app starts
