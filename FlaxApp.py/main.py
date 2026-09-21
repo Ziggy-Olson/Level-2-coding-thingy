@@ -46,9 +46,16 @@ content = tk.Frame(
 canvas_window = canvas.create_window(
     (0, 0),
     window=content,
-    anchor="nw"
+    anchor="n"
 )
+def centre_content(event):
+    canvas.coords(
+        canvas_window,
+        event.width // 2,
+        0
+    )
 
+canvas.bind("<Configure>", centre_content)
 def update_scroll(event):
     canvas.configure(scrollregion=canvas.bbox("all"))
 
