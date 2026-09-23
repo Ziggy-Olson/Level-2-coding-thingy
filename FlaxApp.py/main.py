@@ -79,7 +79,7 @@ def load_image(filename):
         )
 
     return image
-    
+        
 home_image = tk.PhotoImage(file="images/Flax1.png")
 harvesting_image = tk.PhotoImage(file="images/Flax2.png")
 preparing_image = tk.PhotoImage(file="images/Flax3.png")
@@ -88,12 +88,39 @@ advanced_image = tk.PhotoImage(file="images/Flax5.png")
 home_icon_original = tk.PhotoImage(file="images/home.png")
 home_icon = home_icon_original.subsample(30, 30)
 
-# Information for each category
+# Information shown when each category button is selected
 category_information = {
-    "Harvesting Harakeke": "Harakeke should only be harvested on public propertie. you should always cut away from yourself, and not in wet weather",
-    "Preparing Harakeke": "Mattering on what youre weaving you need to prepare the Harakeke in different ways from removing the fibre or just cuting off the edge",
-    "Basics to weaving": "Patterns :P will show image later",
-    "Advanced weaving": "Step by step basket or flower"
+    "Harvesting Harakeke":
+        "Harakeke should be harvested carefully to protect the plant and yourself. "
+        "Only take leaves from healthy plants and cut away from yourself. "
+        "You have to cut away from the plant on a angle that does not angle "
+        "into the center of the plant cause that causes water build up and rotting of the plant. "
+        "Avoid harvesting in wet weather because the leaves can be harder "
+        "to work with and just generally looked down apon or Tapu. "
+        "When harvesting, leave the centre 3 shoots of the plant "
+        "so it can continue growing. ",
+
+    "Preparing Harakeke":
+        "Harakeke needs to be prepared before it can be used for weaving. "
+        "The preparation method depends on what you are making. "
+        "For large baskets (Kete) all you need to do is remove the edge and spine. "
+        "For more presice you will have to remove edge and spine but also use a knife to "
+        "remove fibres allowing the flax to bend and be folded easier.",
+
+    "Basics to weaving":
+        "Basic weaving involves passing strips of harakeke over and under "
+        "each other to create a pattern. Keeping the strips even and "
+        "pulling them firmly helps make the weaving stronger and neater. "
+        "Simple patterns can be used to make things such as small mats, "
+        "flowers and other decorations. Look Below to see a simple fish design.",
+
+    "Advanced weaving":
+        "Advanced weaving uses more complicated patterns and techniques. "
+        "These techniques can be used to create objects such as baskets "
+        "and more detailed flowers. It is important to keep the tension "
+        "even and follow each step carefully when making a larger item. "
+        "Good places to learn is places like courses provided through SIT"
+        "or other courses/clubs that do weaving."
 }
 
 def show_information(category):
