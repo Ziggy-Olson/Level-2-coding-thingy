@@ -48,6 +48,7 @@ canvas_window = canvas.create_window(
     window=content,
     anchor="n"
 )
+
 # Keeps the content centred when the window changes size
 def centre_content(event):
     canvas.coords(
@@ -55,12 +56,13 @@ def centre_content(event):
         event.width // 2,
         0
     )
-    
+
     canvas.configure(scrollregion=canvas.bbox("all"))
 
     # Return to the top if all content fits on screen
     if canvas.bbox("all")[3] <= canvas.winfo_height():
         canvas.yview_moveto(0)
+
 canvas.bind("<Configure>", centre_content)
 
 # Updates the area that can be scrolled
@@ -69,12 +71,14 @@ def update_scroll(event):
    
     if canvas.bbox("all")[3] <= canvas.winfo_height():
         canvas.yview_moveto(0)
+
 # Allows scrolling with the mouse wheel
 def scroll(event):
     canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
 
 canvas.bind_all("<MouseWheel>", scroll)
 content.bind("<Configure>", update_scroll)
+
 # Images
 def load_image(filename):
     image = tk.PhotoImage(file="images/" + filename)
