@@ -48,6 +48,7 @@ canvas_window = canvas.create_window(
     window=content,
     anchor="n"
 )
+# Keeps the content centred when the window changes size
 def centre_content(event):
     canvas.coords(
         canvas_window,
@@ -56,9 +57,12 @@ def centre_content(event):
     )
 
 canvas.bind("<Configure>", centre_content)
+
+# Updates the area that can be scrolled
 def update_scroll(event):
     canvas.configure(scrollregion=canvas.bbox("all"))
 
+# Allows scrolling with the mouse wheel
 def scroll(event):
     canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
 
@@ -123,6 +127,7 @@ category_information = {
         "or other courses/clubs that do weaving."
 }
 
+# Category selection
 def show_information(category):
     information.config(text=category_information[category])
     
