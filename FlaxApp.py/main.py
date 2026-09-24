@@ -55,13 +55,20 @@ def centre_content(event):
         event.width // 2,
         0
     )
+    
+    canvas.configure(scrollregion=canvas.bbox("all"))
 
+    # Return to the top if all content fits on screen
+    if canvas.bbox("all")[3] <= canvas.winfo_height():
+        canvas.yview_moveto(0)
 canvas.bind("<Configure>", centre_content)
 
 # Updates the area that can be scrolled
 def update_scroll(event):
     canvas.configure(scrollregion=canvas.bbox("all"))
-
+   
+    if canvas.bbox("all")[3] <= canvas.winfo_height():
+        canvas.yview_moveto(0)
 # Allows scrolling with the mouse wheel
 def scroll(event):
     canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
